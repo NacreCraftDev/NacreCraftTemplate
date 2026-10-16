@@ -7,8 +7,8 @@
 //
 // The namespace and class below are filled in by `ncm template example`,
 // using the project you run it in.
-using NetCraft.Logging;
-using NetCraft.ModApi.Wrapper;
+using NacreCraft.Logging;
+using NacreCraft.ModApi.Wrapper;
 
 namespace __MOD_NAMESPACE__;
 
@@ -16,7 +16,7 @@ public static class __MOD_CLASS__
 {
     public static void Respawn(object target, object victim, object killer)
     {
-        var method = NcAccess.Method("NetCraft.Game.Server.PlayerList", "RespawnPlayer");
+        var method = NcAccess.Method("NacreCraft.Game.Server.PlayerList", "RespawnPlayer");
         if (method is null)
             return;
 

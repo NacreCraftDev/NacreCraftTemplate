@@ -11,8 +11,8 @@
 //
 // The namespace and class below are filled in by `ncm template example`,
 // using the project you run it in.
-using NetCraft.Game.Server;
-using NetCraft.ModApi.Extension;
+using NacreCraft.Game.Server;
+using NacreCraft.ModApi.Extension;
 
 namespace __MOD_NAMESPACE__;
 

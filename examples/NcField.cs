@@ -6,8 +6,8 @@
 //
 // The namespace and class below are filled in by `ncm template example`,
 // using the project you run it in.
-using NetCraft.Logging;
-using NetCraft.ModApi.Wrapper;
+using NacreCraft.Logging;
+using NacreCraft.ModApi.Wrapper;
 
 namespace __MOD_NAMESPACE__;
 
@@ -16,7 +16,7 @@ public static class __MOD_CLASS__
     // Read a field of a kernel type.
     public static void Read(object target)
     {
-        var field = NcAccess.Field("NetCraft.Game.Server.PlayerList", "_players");
+        var field = NcAccess.Field("NacreCraft.Game.Server.PlayerList", "_players");
         if (field is null)
             return;
 
@@ -27,7 +27,7 @@ public static class __MOD_CLASS__
     // Write one back. Guard with CanWrite first, a readonly field rejects it.
     public static void Write(object target, object value)
     {
-        var field = NcAccess.Field("NetCraft.Game.Server.PlayerList", "_players");
+        var field = NcAccess.Field("NacreCraft.Game.Server.PlayerList", "_players");
         if (field is { CanWrite: true })
             field.Set(target, value);
     }

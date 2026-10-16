@@ -5,8 +5,8 @@
 //
 // The namespace and class below are filled in by `ncm template example`,
 // using the project you run it in.
-using NetCraft.Logging;
-using NetCraft.ModApi.Wrapper;
+using NacreCraft.Logging;
+using NacreCraft.ModApi.Wrapper;
 
 namespace __MOD_NAMESPACE__;
 
@@ -15,7 +15,7 @@ public static class __MOD_CLASS__
     // Read and write one property.
     public static void Touch(object target)
     {
-        var property = NcAccess.Property("NetCraft.Game.Server.ServerPlayer", "Health");
+        var property = NcAccess.Property("NacreCraft.Game.Server.ServerPlayer", "Health");
         if (property is null)
             return;
 

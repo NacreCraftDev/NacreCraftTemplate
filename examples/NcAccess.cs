@@ -6,8 +6,8 @@
 //
 // The namespace and class below are filled in by `ncm template example`,
 // using the project you run it in.
-using NetCraft.Logging;
-using NetCraft.ModApi.Wrapper;
+using NacreCraft.Logging;
+using NacreCraft.ModApi.Wrapper;
 
 namespace __MOD_NAMESPACE__;
 
@@ -23,7 +23,7 @@ public static class __MOD_CLASS__
     // Resolve a type by full name, then take members off it by name.
     public static void Reach(object target)
     {
-        var type = NcAccess.FindType("NetCraft.Game.Server.PlayerList");
+        var type = NcAccess.FindType("NacreCraft.Game.Server.PlayerList");
         if (type is null)
             return;
 

@@ -1,6 +1,6 @@
-# NetCraft mod template
+# NacreCraft mod template
 
-Sample code for NetCraft mod development. Every entry in `NetCraftTemplate.yaml`
+Sample code for NacreCraft mod development. Every entry in `NacreCraftTemplate.yaml`
 points at one file under `examples/`, and `ncm template` pulls them on demand.
 
 ## Usage
@@ -13,12 +13,12 @@ ncm template example <api id>  pull one example file into the current directory
 
 ## The two routes
 
-`NetCraft.ModApi` exposes two namespaces, pick the one that fits:
+`NacreCraft.ModApi` exposes two namespaces, pick the one that fits:
 
 | Namespace | What you get |
 | --- | --- |
-| `NetCraft.ModApi.Wrapper` | Events, `Nc*` facades and `Nc*` handles. No kernel type shows up in the public surface, so a kernel rename does not force a rebuild of your mod. |
-| `NetCraft.ModApi.Extension` | `[Inject]` and `[Mixin]` attributes. Rules name kernel types and methods directly, which is more powerful and more fragile. |
+| `NacreCraft.ModApi.Wrapper` | Events, `Nc*` facades and `Nc*` handles. No kernel type shows up in the public surface, so a kernel rename does not force a rebuild of your mod. |
+| `NacreCraft.ModApi.Extension` | `[Inject]` and `[Mixin]` attributes. Rules name kernel types and methods directly, which is more powerful and more fragile. |
 
 ## Handles
 
@@ -30,7 +30,7 @@ operations take the level handle plus `x y z`.
 ## Common calls
 
 Open this panel from inside a mod project and every call below that your code
-actually uses is graded against `NetCraftTemplate.yaml`: green when the member
+actually uses is graded against `NacreCraftTemplate.yaml`: green when the member
 is declared, amber when the member is not, red when the type is not declared
 at all. Hover a highlighted name to see the reason.
 

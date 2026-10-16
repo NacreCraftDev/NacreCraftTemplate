@@ -5,13 +5,13 @@ Usage:
     python add_api.py <id> --title "Title" --summary "Summary"
     python add_api.py <id> --title "Title" --summary "Summary" --template examples/Other.cs
 
-<id> is the full api name, for example NetCraft.ModApi.Wrapper.NcServer.
+<id> is the full api name, for example NacreCraft.ModApi.Wrapper.NcServer.
 Without --template the file name comes from the last segment of the id and
 lands under examples/.
 
 The catalog is edited as plain text so comments and field order survive.
 Because entries are appended at the end, `apis:` has to stay the last top
-level section of NetCraftTemplate.yaml.
+level section of NacreCraftTemplate.yaml.
 """
 
 import argparse
@@ -20,7 +20,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent
-CATALOG = ROOT / "NetCraftTemplate.yaml"
+CATALOG = ROOT / "NacreCraftTemplate.yaml"
 
 # Skeleton for a brand new example. Braces are doubled for str.format.
 # The two placeholders are filled in by `ncm template example`, not here.
@@ -46,9 +46,9 @@ public static class __MOD_CLASS__
 def pick_using(api_id: str) -> str:
     """Return the using line that matches the api namespace."""
     if ".Wrapper." in api_id:
-        return "using NetCraft.ModApi.Wrapper;\n"
+        return "using NacreCraft.ModApi.Wrapper;\n"
     if ".Extension." in api_id:
-        return "using NetCraft.ModApi.Extension;\n"
+        return "using NacreCraft.ModApi.Extension;\n"
     return ""
 
 
@@ -83,7 +83,7 @@ def apis_is_last(text: str) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Add a template entry and its example file.")
-    parser.add_argument("id", help="full api name, for example NetCraft.ModApi.Wrapper.NcServer")
+    parser.add_argument("id", help="full api name, for example NacreCraft.ModApi.Wrapper.NcServer")
     parser.add_argument("--title", required=True, help="short name shown in the list")
     parser.add_argument("--summary", required=True, help="one line description")
     parser.add_argument("--template", help="example path relative to the repository root")
@@ -93,7 +93,7 @@ def main() -> int:
     text = CATALOG.read_text(encoding="utf-8")
 
     if not apis_is_last(text):
-        print("error: apis: has to be the last top level section of NetCraftTemplate.yaml", file=sys.stderr)
+        print("error: apis: has to be the last top level section of NacreCraftTemplate.yaml", file=sys.stderr)
         return 1
 
     if re.search(rf"^\s*-\s*id:\s*{re.escape(args.id)}\s*$", text, re.MULTILINE):
